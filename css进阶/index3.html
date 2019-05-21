@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        padding: 20px 100px;
+    }
+    .container{
+        position: relative;
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        line-height: 100px;
+        font-size:20px;
+        z-index: 2;
+        overflow:hidden;
+        transform:scale(1);
+        border: solid 1px #333;
+    }
+    .container>img{
+       background: url(img/flight.png);
+       background-size: cover;
+        z-index: -1;
+        /* transform: rotate(45deg); */
+        /* transform: rotate(45deg) scale(0.7);  */
+        clip-path: polygon(50% 0, 100% 50%,50% 100%,0 50%);
+        transition: 2s clip-path,2s transform;  
+        animation: convert 2s ease-in-out infinite;
+        width: 10px;
+        height: 10px;
+    }
+    img:hover{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        transform: scale(1.41);
+    }
+    @keyframes convert{
+        to{
+            width: 200px;
+            height: 200px;
+        }
+    }
+    .text{
+        /* display:inline-block; */
+        /* transform: skewX(-45deg); */
+    }
+</style>
+<script>
+ let num = Infinity
+</script>
+<body>
+   <div class="container">
+       <img src="img/flight.png" width="200" height="200" />
+   </div>
+</body>
+</html>

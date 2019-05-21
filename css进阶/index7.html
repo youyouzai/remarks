@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        padding: 20px;
+    }
+    div{
+        margin: 20px;
+    }
+    .container{
+        position: relative;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #58a;
+        font-size: 20px;
+        line-height: 50px;
+        text-align: center;
+        cursor: pointer;
+        border: transparent 20px solid;
+        background-clip: padding-box;
+        box-shadow: 0 0 0 1px rgba(0,0,0,.3) inset,
+        0 .1em 0.5em -.05em rgba(0, 0, 0, .5);
+    }
+    .container::before{
+        content: '';
+        position: absolute;
+        top:-1em;bottom:-1em;right: -1em;left:-1em;
+        z-index: -1;
+        background:yellowgreen;
+    }
+    .container1 input[type="checkbox"] + label::before{
+        content: '\a0';
+        display: inline-block;
+        vertical-align: .2em;
+        width: .8em;
+        height: .8em;
+        margin-right: .2em;
+        border-radius: .2em;
+        background: #999;
+        line-height: .65;
+        text-indent: .05em;
+        font-size: 16px;
+    }
+    .container1 input[type="checkbox"]:checked + label::before{
+        content: '\2713';
+        background: yellowgreen;
+    }
+    input[type="checkbox"]{
+        display:none;
+    }
+    .container1 input[type="checkbox"]:focus + label::before{
+        box-shadow: 0 0 .1em .1em #58a;
+    }
+    .container4 input[type="checkbox"] + label{
+        display: inline-block;
+        padding: .5em;
+        background: #58a;
+        border-radius: 4px;
+    }
+    .container4 input[type="checkbox"]:checked + label{
+        background: deeppink;
+    }
+</style>
+<body>
+    <div class="container">+</div>
+    <div class="container1">
+        <input type="checkbox" id="awesome" />
+        <label for="awesome">Awesome!</label>
+    </div>
+    <div class="container2">
+        <label for="input">Names: </label>
+        <input type="input" id="input" />
+    </div>
+    <div class="container3">
+        <label>Names: <input type="input" /></label>
+    </div>
+    <div class="container4">
+         <input type="checkbox" id="awesome1" />
+         <label for="awesome1">Awesome!</label>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        padding: 20px;
+        background: url(img/flight.png);
+        background-size: cover;
+    }
+    .mask{
+        position: absolute;
+        top:0;bottom:0;left:0;right:0;
+        background:rgba(255, 255, 255, .5);
+        filter: blur(20px) contrast(.8) brightness(.8);
+        z-index: -1;
+    }
+    .container{
+        position:relative;
+        width: 400px;
+        height: 150px;
+        margin: 120px auto 20px;
+        padding: 1em;
+        background: #fff;
+        border: solid 1px lightblue;
+        border-radius: .5em;
+        /* box-shadow: 0 0 0 50vmax rgba(0, 0, 0, .6); */
+        box-shadow: 0 5px 5px 0px rgba(0, 0, 0, .6);
+        overflow:auto;  
+        background-image:
+        linear-gradient(white,white),
+        radial-gradient(at top, rgba(0,0,0,.8),transparent 70%);
+        background-repeat:no-repeat;
+        background-size: 100% 15px;
+        background-attachment: local,scroll;
+    }
+</style>
+<body>
+    <div class="mask"></div>
+    <div class="container">
+        <h3>Edit Something</h3>
+        <p>Specificity is the means by which browsers decide which CSS property values are the most relevant to an element and, therefore, will be applied. Specificity is based on the matching rules which are composed of different sorts of CSS selectors.</p>
+        <p>Specificity is the means by which browsers decide which CSS property values are the most relevant to an element and, therefore, will be applied. Specificity is based on the matching rules which are composed of different sorts of CSS selectors.</p>
+   
+    </div>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        padding: 20px;
+    }
+    .cotnainer{
+        font-size:20px;
+        padding: .5em;
+        line-height: 1.5;
+        background: #ccc;
+        background-size: auto 3em;
+        background-image: linear-gradient(0, #999 50%, transparent 0);
+        background-origin: content-box;
+        white-space:pre;
+        font-variant-ligatures: common-ligatures;
+   }
+   pre{
+       display: block;
+        /* margin: 1em 0; */
+        tab-size: 2;
+        padding: 0;
+        margin: 0;
+   }
+   @font-face{
+       font-family: Ampersand;
+       src: local('Baskerville');
+       unicode-range: U+26;  
+   }
+   .amp{
+       font-family: Ampersand,Baskerville, "Goudy Old Style";
+       font-style: italic;
+   }
+   .page{
+       margin: 20px;
+       font-size: 20px;
+       display: inline-block;
+       text-decoration: none;
+       line-height: 1;
+       /* border-bottom: 1px solid gray; */
+       background: linear-gradient(green, green) no-repeat;
+       background-size: 100% 1px;
+       background-position: 0 100%;
+       text-shadow: .05em 0  white, -.05em 0em white;
+   }
+   .page1{
+       margin: 20px;
+       padding: 10px;
+       background: hsl(210, 13%, 60%);
+       color: hsl(210, 13%, 30%);
+       text-shadow: 0 1px 1px hsla(0, 0%, 100%, .8);
+   }
+   .page2{
+        margin: 20px;
+       padding: 10px;
+       font-size: 20px;
+       color: white;
+       text-shadow: 1px 1px black,-1px -1px black,
+       -1px 1px black,1px -1px black;
+       transition: .6s;
+   }
+   .page2:hover{
+       background: #203;
+       color: trnasparent;
+       text-shadow: 0 0 .1em,0 0 .3em;
+   }
+   .page3{
+       margin: 20px;
+       padding: 10px;
+       background: #58a;
+       font-size: 20px;
+       color: white;
+       text-shadow: 0 1px hsl(0, 0%, 85%),
+       0 2px hsl(0, 0%, 80%),
+       0 3px 10px black;
+   }
+   .page4{
+       margin: 20px;
+       padding: 10px;
+       background: #58a;
+       font-size: 20px;
+       color: white;
+       text-shadow:1px 1px black,2px 2px black,
+       3px 3px black,4px 4px black,
+       5px 5px black;
+   }
+</style>
+<body>
+    <div>
+        <a class="page">The only way to get rid of a temptation</a>
+    </div> 
+    <div class="page1">
+        The only way to get rid of a temptation is to yield to it
+    </div>  
+    <div class="page2">
+        The only way to get rid of a temptation is to yield to it
+    </div> 
+    <div class="page3">
+            The only way to get rid of a temptation is to yield to it
+        </div> 
+        <div class="page4">
+                The only way to get rid of a temptation is to yield to it
+            </div> 
+    <div class="cotnainer">
+        HTML <span class="amp">&amp;</span> CSS
+        <pre>
+            &#xfb01;
+            fi
+            .container{
+                padding: .5em;
+                line-height: 1.5;
+                background: beige;
+                background-size: auto 3em;
+                background-image: linear-gradient(0, #999 50%, transparent 0);
+            }
+        </pre>
+    </div>
+</body>
+</html>

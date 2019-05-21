@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        padding: 20px;
+    }
+    div{
+    }
+    .container,.container1{
+        width:200px;
+        height: 200px;
+        border-radius: 50%;
+        background: yellowgreen;
+        text-align: center;
+        margin: 20px;
+    }
+    @keyframes circle{
+        to{
+            transform: rotate(1turn)
+        }
+    }
+    @keyframes circle-reverse{
+        from {
+            transform: rotate(1turn)
+        }
+    }
+    .path{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background:deeppink;
+        transform-origin: 50% 100px;
+        animation: circle 2s linear infinite;
+    }
+    .path img{
+        animation: circle-reverse 2s linear infinite; 
+    }
+    @keyframes circle1{
+        from {
+            transform: translateY(100px) translateY(-50%)
+                rotate(0turn)
+                translateY(-100px) translateY(50%)
+                rotate(1turn)
+        }
+        to {
+            transform: translateY(100px) translateY(-50%)
+                rotate(1turn)
+                translateY(-100px) translateY(50%)
+                rotate(0turn)
+        }
+    }
+    .container1 img{
+        animation: circle1 2s linear infinite;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="path">
+                <img src="img/flag.png" width="20" height="20" />
+        </div>
+    </div>
+    <div class="container1">
+        <img src="img/flag.png" width="20" height="20" />
+    </div>
+</body>
+</html>

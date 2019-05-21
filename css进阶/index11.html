@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        padding: 20px;
+    }
+    .highlight{
+        animation: 2s blink-smooth infinite alternate-reverse;
+        border: solid 1px deepskyblue;
+    }
+    @keyframes blink-smooth{
+        50% {
+            /* color: transparent;
+            border-color: transparent;  */
+            padding: 10px;
+            border-color:red;
+            border-width: 2px;
+        }
+        99% {
+            color: transparent;
+            border-width: 20px;
+            border-color: yellowgreen; 
+            padding: 100px;
+        }
+    }
+    @keyframes typing{
+        from {width: 0}
+    }
+    @keyframes light{
+        50%{
+            border-color: transparent;
+        }
+    }
+    h1{
+        display:inline-block;
+        border-right: .5em solid;
+        word-wrap: none;
+        white-space:nowrap;
+        overflow:hidden;
+        width: 30ch;
+        animation: typing 3s steps(15),
+        light .4s steps(1) infinite;
+    }
+</style>
+<body>
+    <div class="highlight">
+        Alternate
+    </div>
+    <div>
+        <h1>今天是个好日子这些年男你辛苦了</h1>
+    </div>
+</body>
+</html>

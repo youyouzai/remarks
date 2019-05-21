@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        min-height:100vh;
+        padding: 20px;
+    }
+    div{
+        margin: 20px;
+    }
+    .ball{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: #58a;
+        animation: bounce 3s cubic-bezier(0.23, 1, 0.320, 1)  infinite;
+    }
+    @keyframes bounce{
+        60%,80%,to{
+            transform:translateY(400px);
+            animation-timing-function: ease}
+        70% {transform:translateY(300px)}
+        90% {transform:translateY(360px)}
+    }
+    input:not(:focus) + .callout{
+        transform: scale(0);
+        transition: .25s;
+    }
+    input:focus + .callout{
+        /* transform: scale(1); */
+        animation: elastic-grow 1.5s ;
+    }
+    .callout{
+        position: relative;
+        display: inline-block;
+        background: deeppink;
+        font-size: 12px;
+        padding: 7px 10px;
+        transform: scale(0);
+        /* transition: 2s transform; */
+        /* transform-origin: 1.4em -.4em; */
+    }
+    .callout:after{
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        border: solid 5px transparent;
+        border-bottom-color: deeppink;
+    }
+    label{
+        height: 90px;
+        display: flex;
+        flex-direction:column;
+        flex-wrap: no-wrap;
+
+        justify-content:space-around;
+        align-items:flex-start;
+    }
+    @keyframes elastic-grow{
+        from {transform: scale(0);}
+        70%{
+            transform: scale(1.1);
+            animation-timing-function: ease;
+        }
+    }
+</style>
+<body>
+    <div class="ball"></div>
+
+    <div>
+        <label>
+            Your username: <input id="usernmae"/>
+            <span class="callout">Only latters can be wroten!</span>
+        </label>
+    </div>
+</body>
+
+</html>

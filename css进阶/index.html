@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="main.js"></script>
+<script>
+
+    $("#comission div").on("click", "input", function () {
+            var value=parseInt($(this).val())  
+
+
+         $("#comission div").on("click", "input", function () {
+            var value=parseInt($(this).val())  
+            var hours1 = Math.floor(value / 60);
+           var minutes1 = value - (hours1 * 60);
+            var targetTime = new Date(0); 
+        targetTime.setMinutes(minutes1);
+        targetTime.setHours(hours1); 
+             if(value>1430){ targetTime.setMinutes(59);targetTime.setHours(23)}  
+              var timeZoneFromDB=$(this).find('#comissionLabel').attr("data-offset"); 
+      $('#comission .time').each(function(){ 
+          var timeZoneFromDB=$(this).find('#comissionLabel').attr("data-offset"); 
+      var tzDifference = (parseInt(timeZoneFromDB) / 60) + targetTime.getTimezoneOffset();
+      var date = new Date(targetTime.getTime() + tzDifference * 60000); 
+      var totallv=parseInt(date.getHours()*60)+date.getMinutes(); 
+      $(this).find('.tooltip').css('margin-left',totallv/3);
+      $(this).find('.tooltip').html(date.getHours() + ':' + date.getMinutes());
+      $(this).find('#comissionLabel').html(date.getHours() + ':' + date.getMinutes());
+      $(this).find('.custom-range').val(totallv)
+    }); 
+     });  
+     </script>
+
+
+<body>
+    <div class="container">
+                     <br><br><br>   <br><br><br>
+                      <div id="comission" class="col-md-6 col-md-offset-2">
+                          
+                          <div  class="col-md-12 mb-3 44 time">afghanistan
+                           <span id="comissionLabel" data-offset='16200'>time: </span> 
+                              
+                           <input class="custom-range" value="60" type="range" min="0" max="1440" step="15">
+                        </div>
+                        <div  class="col-md-12 mb-3 45 time"> Pakistan
+                              <span id="comissionLabel" data-offset='18000'>time: </span> 
+                               
+                            <input class="custom-range"  value="620" type="range" min="0" max="1440" step="15">
+                        </div>
+                          <div class="col-md-12 mb-3 46 time">indian
+                              <span id="comissionLabel" data-offset='19800'>time: </span> 
+                              
+                            <input class="custom-range"  value="620" type="range" min="0" max="1440" step="15">
+                        </div>
+                      </div> 
+                </div> 
+</body>
+</html>

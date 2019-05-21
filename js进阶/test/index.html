@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div v-text="text"></div>
+        <input type="text" v-model="text" />
+    </div>
+</body>
+<script>
+    class Vue{
+        constructor(options){
+            this.options = options
+            this.$data = options.data
+        
+            this.deps = {}
+            this.$el =  document.querySelectorAll(this.options.el)[0]
+            this.complier(this.$el)
+            this.observer()
+        }
+        complier(el){
+            for(let i = 0; i< el.children.length; i++){
+                let child = el.children[i]
+                this.complier(child)
+                // 添加观察著
+                if(child.hasAttribute("v-model")){
+                    let value = child.getAttribute("v-model")
+                    this.watch(child, value)
+                    this.addObserver(value, (data)=>{
+                       child.value = data
+                   })
+                }
+                if(child.hasAttribute("v-text")){
+                    let value = child.getAttribute("v-text")
+                   this.addObserver(value, (data)=>{
+                       child.innerHTML= data
+                   })
+                }
+            }
+        }
+        watch(el, key){
+            el.addEventListener('input', (event)=>{
+                this.data[key] = el.value
+            })
+        }
+        addObserver(key, callback){
+           // 添加订阅者
+           if(this.deps[key]){
+               this.deps[key].push(callback)
+           }else{
+               this.deps[key] = [callback]
+           }
+        }
+        observer(){
+            let _self = this
+            this.data = new Proxy(this.$data, {
+                get: function (target, key) {
+                   return target[key]
+                },
+                set: function (target, key, value) {
+                    if(value != target[key]){
+                        _self.dispatch(key, value)
+                    }
+                    return true
+                
+                }
+            });
+        }
+        dispatch(key, value){
+            let watchers = this.deps[key]
+            for(let i = 0; i<watchers.length; i++){
+                 watchers[i].call(this, value)
+            }
+        }
+    }
+    new Vue({
+        el: '#app',
+        data: {
+            text: ''
+        }
+    })
+</script>
+</html>

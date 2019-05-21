@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="jquery.js"  ></script>
+<!-- <script src="jquery-3.2.1.js" ></script> -->
+<style>
+    #box{
+        position: relative;
+        left: 500px;
+        height: 100px;
+        width: 100px;
+        background: green;
+    }
+    .big{
+        font-size: 100px;
+    }
+</style>
+<body>
+    <div id="box">good day</div>
+    <script>
+        var elem = $("#box")
+
+        // 通过access
+        // console.log(elem.text())
+        
+        // console.log(elem.text("update text"))
+        // console.log(elem.css("color", "red"))
+        // console.log(elem.css("color"))
+        // console.log(elem.css({
+        //     "color": "blue",
+        //     "font-size": "40px"
+        // }))
+        // console.log(elem.css(['color', 'font-size']))
+        // elem.addClass('big small')
+        // console.log($("<div><p>zgliu3</p></div>"))
+        function fn(){
+            console.log(1)
+        }
+        function fn1(){
+            console.log(2)
+        }
+        // $.queue(elem, 'max', fn);
+        // $.queue(elem, 'max', fn1);
+        // console.log(jQuery.queue(elem, 'max'))
+        // $.dequeue(elem, 'max')
+        elem.animate({
+            left: 50,
+            duration: 2000
+        })
+    </script>
+</body>
+</html>

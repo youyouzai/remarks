@@ -1,0 +1,33 @@
+{"/pet": {
+    "post": {
+      "tags": [
+        "pet"
+      ],
+      "produces": [
+        "application/xml",
+        "application/json"
+      ],
+      "parameters": [
+        {
+          "in": "body",
+          "name": "body",
+          "description": "Pet object that needs to be added to the store",
+          "required": true
+        }
+      ],
+      "responses": {
+        "200": {
+            "description": "successful operation",
+            "data": {
+              "total": 0,
+              "list": [{
+                "name": "",
+                "age": 3,
+                "isDeleted": true
+                }]
+            }
+          }
+      }
+    }
+  }
+}

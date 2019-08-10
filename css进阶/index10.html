@@ -70,6 +70,15 @@
             animation-timing-function: ease;
         }
     }
+    .ball{
+        animation:  animate-test 10s infinite;
+    }
+    @keyframes animate-test{
+        from{ background-color: red}
+        25%{background-color: blue}
+        50%{background-color: yellow}
+        75%{background-color: #ffffff}
+    }
 </style>
 <body>
     <div class="ball"></div>
